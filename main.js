@@ -17,15 +17,17 @@ function submitHandler(e) {
     let address = document.querySelector('#address')
     let price = document.querySelector('#price')
     let imageURL = document.querySelector('#img')
+   
 
     let bodyObj = {
+
         address: address.value,
         price: price.value, 
         imageURL: imageURL.value
     }
 
     createHouse(bodyObj)
-
+    
     address.value = ''
     price.value = ''
     imageURL.value = ''
@@ -36,6 +38,7 @@ function createHouseCard(house) {
     houseCard.classList.add('house-card')
 
     houseCard.innerHTML = `<img alt='house cover image' src=${house.imageURL} class="house-cover-image"/>
+    <p class="address">${house.name}</p>
     <p class="address">${house.address}</p>
     <div class="btns-container">
         <button onclick="updateHouse(${house.id}, 'minus')">-</button>

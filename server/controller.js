@@ -13,8 +13,9 @@ module.exports = {
     },
 
     createHouse: (req, res) => {
-        const {address, price,imageURL} = req.body;
+        const {name,address, price,imageURL} = req.body;
         let newHouse = {
+            name,
             id: globalID,
             address,
             price: +price,
